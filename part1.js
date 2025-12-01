@@ -6,8 +6,10 @@ function getPassword() {
 
   text = fs
     .readFileSync("input.txt", "utf8", (error, data) => {
-      if (error)
+      if (error) {
         console.error("An error occurred while reading the file:", error);
+        return;
+      }
       return data;
     })
     .split("\n");
